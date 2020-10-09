@@ -1,0 +1,25 @@
+{
+  "name": "random-images",
+  "version": "1.0.0",
+  "description": "Get random image",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oknehsorod/random-images.git"
+  },
+  "keywords": [
+    "images"
+  ],
+  "author": "Oknehsorod",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Oknehsorod/random-images/issues"
+  },
+  "homepage": "https://github.com/Oknehsorod/random-images#readme",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}
