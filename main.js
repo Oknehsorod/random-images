@@ -34,10 +34,8 @@ async function downloadImage(url, id, folder) {
 }
 
 const argv = process.argv.slice(2);
-console.log(argv);
-const folder = argv[0] || "imgs";
-const count = argv[1] || 10;
-const treat = argv[2] || 10;
+const count = argv[0] || 10;
+const treat = argv[1] || 10;
 
 async function loop(c) {
   if (c === 0) {
@@ -45,7 +43,7 @@ async function loop(c) {
   }
   const id = genHash();
   const url = "https://i.imgur.com/" + id + ".jpg";
-  const result = await downloadImage(url, id, folder);
+  const result = await downloadImage(url, id, "imgs");
   if (result) {
     loop(c - 1);
   } else {
@@ -53,7 +51,10 @@ async function loop(c) {
   }
 }
 
-console.info("Running: folder: " + folder + " count: " + count);
+console.info("Running: Count: " + count + " Streams: " + treat);
+try {
+  fs.mkdirSync("./imgs")
+} catch(e) {}
 for (let i = 0; i < treat; i += 1) {
   loop(Math.floor(count / treat));
 }
